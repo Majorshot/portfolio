@@ -11,7 +11,7 @@ const Skill = () => {
   ];
 
   return (
-    <div className="bg-black text-white py-10 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-20">
+    <div id="skills" className="bg-black text-white py-10 sm:py-16 lg:py-20 px-4 sm:px-8 lg:px-20">
       {/* Header */}
       <div className="text-center mb-8 sm:mb-12 lg:mb-16">
         <TrueFocus

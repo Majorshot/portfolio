@@ -4,7 +4,6 @@ import main from "../assets/Main_photo.png";
 import FadeContent from "./Animations/FadeContent";
 import AnimatedContent from "./Animations/AnimatedContent";
 import SplashCursor from "./Animations/SplashCursor";
-import Magnet from './Animations/Magnet'
 
 const Hero = () => {
   const handleAnimationComplete = () => {
@@ -12,7 +11,7 @@ const Hero = () => {
   };
 
   return (
-    <div className="bg-black text-white min-h-screen px-4 sm:px-8 lg:px-20 pt-16 sm:pt-24 lg:pt-32 relative flex flex-col">
+    <div id="home" className="bg-black text-white min-h-screen px-4 sm:px-8 lg:px-20 pt-16 sm:pt-24 lg:pt-32 relative flex flex-col">
       <div className="fixed inset-0 z-0">
         <SplashCursor />
       </div>
@@ -106,7 +105,7 @@ const Hero = () => {
               >
                 <div className="flex gap-5">
                   {/* Connect Button with right arrow icon */}
-                  <button className="bg-white text-black py-3 px-5 rounded flex items-center space-x-4 hover:bg-gray-100 transition-colors justify-center">
+                  <a href="#contact"><button className="bg-white text-black py-3 px-5 rounded flex items-center space-x-4 hover:bg-gray-100 transition-colors justify-center">
                     <span className="font-medium">Connect with me</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -122,26 +121,33 @@ const Hero = () => {
                         d="M14 5l7 7m0 0l-7 7m7-7H3"
                       />
                     </svg>
-                  </button>
+                  </button></a>
+                  
 
                   {/* Resume Button with right arrow icon */}
-                    <button className="bg-white text-black py-3 px-5 rounded flex items-center space-x-4 hover:bg-gray-100 transition-colors justify-center">
-                    <span className="font-medium">My resume</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </button>
+                  <a 
+  href="https://drive.google.com/file/d/1MzrQEyglHWvNpl-qzCcBk9iKuJqFFOWm/view?usp=sharing"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="bg-white text-black py-3 px-5 rounded flex items-center space-x-4 hover:bg-gray-100 transition-colors justify-center">
+    <span className="font-medium">My resume</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-5 w-5"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M14 5l7 7m0 0l-7 7m7-7H3"
+      />
+    </svg>
+  </button>
+</a>
                 
                   
                 </div>
@@ -153,16 +159,30 @@ const Hero = () => {
         {/* Mobile positioning - only visible on xs screens */}
         <div className="sm:hidden mb-32">
           {/* Scroll Down Text */}
-          <div className="text-center mb-6 pl-16">
-            <BlurText
-              text="To know more scroll down"
-              delay={150}
-              animateBy="words"
-              direction="top"
-              onAnimationComplete={handleAnimationComplete}
-              className="text-lg text-gray-400"
-            />
-          </div>
+          <div className="flex items-center justify-center gap-2 mb-6">
+    <BlurText
+      text="To know more scroll down"
+      delay={150}
+      animateBy="words"
+      direction="top"
+      onAnimationComplete={handleAnimationComplete}
+      className="text-lg sm:text-xl text-gray-400"
+    />
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      className="h-5 w-5 text-gray-400 animate-bounce"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path 
+        strokeLinecap="round" 
+        strokeLinejoin="round" 
+        strokeWidth={2} 
+        d="M19 14l-7 7m0 0l-7-7m7 7V3"
+      />
+    </svg>
+  </div>
 
           {/* Buttons Container */}
           <div className="flex justify-center space-x-4 px-4">
@@ -184,7 +204,7 @@ const Hero = () => {
               >
                 <div className="flex gap-5">
                   {/* Connect Button with right arrow icon */}
-                  <button className="bg-white text-black py-3 px-4 rounded flex items-center space-x-2 hover:bg-gray-100 transition-colors flex-1 justify-center">
+                  <a href="#contact"><button className="bg-white text-black py-3 px-4 rounded flex items-center space-x-2 hover:bg-gray-100 transition-colors flex-1 justify-center">
                     <span className="font-medium">Connect with me</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -200,26 +220,32 @@ const Hero = () => {
                         d="M14 5l7 7m0 0l-7 7m7-7H3"
                       />
                     </svg>
-                  </button>
+                  </button></a>
 
                   {/* Resume Button with right arrow icon */}
-                  <button className="bg-white text-black py-3 px-4 rounded flex items-center space-x-2 hover:bg-gray-100 transition-colors flex-1 justify-center">
-                    <span className="font-medium">My resume</span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-4 w-4"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </button>
+                  <a 
+  href="https://drive.google.com/file/d/1MzrQEyglHWvNpl-qzCcBk9iKuJqFFOWm/view?usp=sharing"
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="bg-white text-black py-3 px-4 rounded flex items-center space-x-2 hover:bg-gray-100 transition-colors flex-1 justify-center">
+    <span className="font-medium">My resume</span>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-4 w-4"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M14 5l7 7m0 0l-7 7m7-7H3"
+      />
+    </svg>
+  </button>
+</a>
                 </div>
               </AnimatedContent>
             </FadeContent>

@@ -53,7 +53,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="bg-black text-white py-10">
+    <div id="contact" className="bg-black text-white py-10">
       <div className="flex justify-center mb-8">
       <SplitText
   text="Contact"

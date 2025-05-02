@@ -31,7 +31,7 @@ const MyWork = () => {
         "Admin dashboard for department management and user control",
         "Real-time appointment status updates and notifications"
       ],
-      demoLink: "#",
+      demoLink: "https://prescipto-qbg7.onrender.com/",
       sourceLink: "#",
       image: code
     },
@@ -45,7 +45,7 @@ const MyWork = () => {
       "Sales dashboard with order analytics and history",
       "Customer profile with order history and favorites"
     ],
-    demoLink: "#",
+    demoLink: "https://pappaspizza.netlify.app/",
     sourceLink: "#",
     image: graphic // Assuming you have a pizza-related image
   },
@@ -59,7 +59,7 @@ const MyWork = () => {
       "Delete completed or unnecessary tasks",
       "Persistent storage to maintain task list between sessions"
     ],
-    demoLink: "#",
+    demoLink: "https://todoappsted.netlify.app/",
     sourceLink: "#",
     image: code // Replace with appropriate todo app image
   },
@@ -67,7 +67,7 @@ const MyWork = () => {
   ];
 
   return (
-    <div className='bg-black text-white py-5 sm:py-10'>
+    <div id="projects" className='bg-black text-white py-5 sm:py-10'>
       <div className='flex justify-center items-center gap-2 mb-4 sm:mb-8 py-5 sm:py-10 text-4xl sm:text-5xl lg:text-7xl'>
         <p>My</p>
         <RotatingText
@@ -117,9 +117,15 @@ const MyWork = () => {
                   ))}
                 </ul>
                 <div className="flex gap-4 mt-4">
-                  <button className="bg-cyan-300 text-black px-4 py-2 rounded-lg hover:bg-cyan-400 transition-colors">
-                    View Demo
-                  </button>
+                <a 
+    href={project.demoLink} 
+    target="_blank" 
+    rel="noopener noreferrer"
+  >
+    <button className="bg-cyan-300 text-black px-4 py-2 rounded-lg hover:bg-cyan-400 transition-colors">
+      View Demo
+    </button>
+  </a>
                   <button className="border border-cyan-300 text-cyan-300 px-4 py-2 rounded-lg hover:bg-cyan-300/10 transition-colors">
                     Source Code
                   </button>

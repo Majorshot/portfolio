@@ -34,7 +34,7 @@ const services = [
 ];
 
   return (
-    <div className="bg-black text-white py-16">
+    <div id="services" className="bg-black text-white py-16">
       <div className="flex justify-center mb-24">
         <GlitchText
           speed={1}

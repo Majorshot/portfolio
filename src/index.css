@@ -7,3 +7,8 @@
 * {
     font-family: "Outfit", sans-serif;
 }
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* Adjusts scroll position to account for fixed navbar */
+  }

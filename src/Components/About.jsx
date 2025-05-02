@@ -4,7 +4,7 @@ import AnimatedContent from "./Animations/AnimatedContent";
 
 const About = () => {
   return (
-    <div className="bg-black text-white px-4 sm:px-6 md:px-10 py-10 sm:py-16 md:py-20">
+    <div id="about" className="bg-black text-white px-4 sm:px-6 md:px-10 py-10 sm:py-16 md:py-20">
       {/* Container with responsive flex layout */}
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-10 items-center">
         {/* Image section */}
