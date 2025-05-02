@@ -54,8 +54,7 @@ const MyWork = () => {
       features: [
         "Categorized menu system (Pizza, Chicken, Box Meals, Soft Drinks)",
         "Real-time order tracking and notification system",
-        "Admin panel for menu management and stock control",
-        "Sales dashboard with order analytics and history",
+        "Sales dashboard for menu management, stock control, analytics and history",
         "Customer profile with order history and favorites",
       ],
       demoLink: "https://pappaspizza.netlify.app/",
@@ -158,19 +157,19 @@ const MyWork = () => {
                 <div className="flex flex-col gap-4">
                   {/* Image Container */}
                   <div className="w-full relative pb-[56.25%] overflow-hidden rounded-lg mb-4 cursor-pointer">
-  <a 
-    href={project.demoLink}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="block w-full h-full"
-  >
-    <img
-      src={project.image}
-      alt={project.title}
-      className="absolute top-0 left-0 w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-    />
-  </a>
-</div>
+                    <a
+                      href={project.demoLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full h-full"
+                    >
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="absolute top-0 left-0 w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                      />
+                    </a>
+                  </div>
 
                   <h6 className="text-2xl font-bold text-cyan-300">
                     {project.title}
@@ -274,10 +273,11 @@ const MyWork = () => {
         >
           <div>
             <p className="text-gray-300 text-lg sm:text-xl mt-4">
-              Capturing moments through my lens with a focus on portrait and
-              landscape photography. Each shot is carefully composed to tell a
-              unique story and evoke emotion through creative angles and natural
-              lighting.
+              Specializing in product photography that brings out the essence of
+              culinary creations. Each image is meticulously crafted with
+              precise lighting, composition, and styling to showcase food and
+              beverages in their most appetizing form, helping brands tell their
+              delicious stories.
             </p>
           </div>
         </AnimatedContent>

@@ -3,6 +3,7 @@ import { MdEmail, MdPhone } from "react-icons/md";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import AnimatedContent from "./Animations/AnimatedContent";
 import SplitText from "./Animations/SplitText";
+import { AnimatePresence, motion } from "framer-motion";
 
 const Contact = () => {
   const handleAnimationComplete = () => {
@@ -15,6 +16,12 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
+  const fadeVariants = {
+    initial: { opacity: 0, y: 10 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -10 }
+  };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -44,12 +51,38 @@ const Contact = () => {
     if (currentStep > 1) setCurrentStep((prev) => prev - 1);
   };
 
-  const handleSubmit = () => {
-    console.log("Form submitted:", formData);
-    // Add your form submission logic here
-    setFormData({ name: "", email: "", message: "" });
-    setCurrentStep(1);
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: '079d0be6-c0b0-4d88-bb65-94dd22d1e7a0', // Replace with your Web3Forms access key
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: 'New Contact Form Submission',
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        alert('Thank you for your message. I will get back to you soon!');
+        setFormData({ name: "", email: "", message: "" });
+        setCurrentStep(1);
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Something went wrong. Please try again.');
+    }
   };
+
+  
 
   return (
     <div id="contact" className="bg-black text-white py-10">
@@ -159,11 +192,20 @@ const Contact = () => {
                   something amazing together!
                 </p>
                 <div className="bg-gray-900 p-8 rounded-lg">
-                  {currentStep === 1 && (
-                    <div className="space-y-4">
-                      <h3 className="text-2xl font-bold text-cyan-300 mb-4">
-                        Your Info
-                      </h3>
+  <AnimatePresence mode="wait">
+    {currentStep === 1 && (
+      <motion.div
+        key="step1"
+        variants={fadeVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{ duration: 0.3 }}
+        className="space-y-4"
+      >
+        <h3 className="text-2xl font-bold text-cyan-300 mb-4">
+          Your Info
+        </h3>
                       <input
                         type="text"
                         name="name"
@@ -180,14 +222,21 @@ const Contact = () => {
                         placeholder="Your Email"
                         className="w-full bg-gray-800 text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-300"
                       />
-                    </div>
-                  )}
+                    </motion.div>
+    )}
 
-                  {currentStep === 2 && (
-                    <div>
-                      <h3 className="text-2xl font-bold text-cyan-300 mb-4">
-                        Message
-                      </h3>
+{currentStep === 2 && (
+      <motion.div
+        key="step2"
+        variants={fadeVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{ duration: 0.3 }}
+      >
+        <h3 className="text-2xl font-bold text-cyan-300 mb-4">
+          Message
+        </h3>
                       <textarea
                         name="message"
                         value={formData.message}
@@ -196,14 +245,21 @@ const Contact = () => {
                         rows={6}
                         className="w-full bg-gray-800 text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-300"
                       />
-                    </div>
-                  )}
+                   </motion.div>
+    )}
 
-                  {currentStep === 3 && (
-                    <div>
-                      <h3 className="text-2xl font-bold text-cyan-300 mb-4">
-                        Preview
-                      </h3>
+{currentStep === 3 && (
+      <motion.div
+        key="step3"
+        variants={fadeVariants}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{ duration: 0.3 }}
+      >
+        <h3 className="text-2xl font-bold text-cyan-300 mb-4">
+          Preview
+        </h3>
                       <div className="space-y-2 text-gray-300">
                         <p>
                           <span className="font-semibold">Name:</span>{" "}
@@ -220,8 +276,9 @@ const Contact = () => {
                           {formData.message}
                         </p>
                       </div>
-                    </div>
-                  )}
+                      </motion.div>
+    )}
+  </AnimatePresence>
 
                   <div className="flex justify-between mt-6">
                     <button

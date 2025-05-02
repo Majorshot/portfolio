@@ -110,7 +110,7 @@ const Hero = () => {
                   {/* Connect Button with right arrow icon */}
                   <a href="#contact">
                     <button className="bg-white text-black py-3 px-5 rounded flex items-center space-x-4 hover:bg-gray-100 transition-all duration-300 hover:scale-105 justify-center transform">
-                      <span className="font-medium">Connect</span>
+                      <span className="font-medium">Contact Me</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5"
@@ -135,7 +135,7 @@ const Hero = () => {
                     rel="noopener noreferrer"
                   >
                     <button className="bg-white text-black py-3 px-5 rounded flex items-center space-x-4 hover:bg-gray-100 transition-all duration-300 hover:scale-105 justify-center transform">
-                      <span className="font-medium">Resume</span>
+                      <span className="font-medium"> My Resume</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5"
@@ -208,7 +208,7 @@ const Hero = () => {
                   {/* Connect Button with right arrow icon */}
                   <a href="#contact">
                     <button className="bg-white text-black py-3 px-4 rounded flex items-center space-x-2 hover:bg-gray-100 transition-colors flex-1 justify-center">
-                      <span className="font-medium">Connect</span>
+                      <span className="font-medium">Contact Me</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-4 w-4"
@@ -233,7 +233,7 @@ const Hero = () => {
                     rel="noopener noreferrer"
                   >
                     <button className="bg-white text-black py-3 px-4 rounded flex items-center space-x-2 hover:bg-gray-100 transition-colors flex-1 justify-center">
-                      <span className="font-medium">Resume</span>
+                      <span className="font-medium">My Resume</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-4 w-4"
