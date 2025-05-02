@@ -93,7 +93,7 @@ const Contact = () => {
                   <div className="flex items-center gap-3 group">
                     <MdEmail className="text-cyan-300 text-2xl group-hover:text-cyan-400" />
                     <a
-                      href="mailto:midhunmohankzhy@gmail.com"
+                      href="mailto:midhunmohankzhyw@gmail.com"
                       className="text-gray-300 hover:text-cyan-300 transition-colors"
                     >
                       midhunmohankzhyw@gmail.com
