@@ -103,7 +103,7 @@ const Hero = () => {
                 config={{ tension: 50, friction: 25 }}
                 initialOpacity={0.2}
                 animateOpacity
-                scale={1.1}
+                scale={1}
                 threshold={0.1}
               >
                 <div className="flex gap-5">

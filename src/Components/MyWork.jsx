@@ -108,10 +108,10 @@ const MyWork = () => {
           scale={1.1}
           threshold={0.2}
         >
-          <div>
-            <p className="text-3xl sm:text-6xl lg:text-5xl font-bold bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#4079ff] bg-clip-text text-transparent leading-normal py-2">
-              Projects
-            </p>
+          <div className="text-left w-full">
+          <p className="text-3xl sm:text-6xl lg:text-6xl font-bold bg-gradient-to-tr from-[#40ffaa] via-[#4079ff] to-[#40ffaa] bg-clip-text text-transparent animate-gradient py-2">
+  Projects
+</p>
           </div>
         </AnimatedContent>
 
@@ -150,7 +150,6 @@ const MyWork = () => {
           >
             <div>
               <SpotlightCard
-                key={index}
                 className="w-full p-6"
                 spotlightColor="rgba(0, 229, 255, 0.2)"
               >
@@ -212,9 +211,9 @@ const MyWork = () => {
           threshold={0.1}
         >
           <div>
-            <p className="text-3xl sm:text-6xl lg:text-5xl font-bold bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#4079ff] bg-clip-text text-transparent leading-normal py-2">
-              Designs
-            </p>
+          <p className="text-3xl sm:text-6xl lg:text-6xl font-bold bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#40ffaa] bg-clip-text text-transparent animate-gradient py-2">
+  Designs
+</p>
           </div>
         </AnimatedContent>
 
@@ -255,9 +254,9 @@ const MyWork = () => {
           threshold={0.1}
         >
           <div>
-            <p className="text-3xl sm:text-6xl lg:text-5xl font-bold bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#4079ff] bg-clip-text text-transparent leading-normal py-2">
-              Photography
-            </p>
+          <p className="text-3xl sm:text-6xl lg:text-6xl font-bold bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#40ffaa] bg-clip-text text-transparent animate-gradient py-2">
+  Photography
+</p>
           </div>
         </AnimatedContent>
 

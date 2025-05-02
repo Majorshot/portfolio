@@ -20,7 +20,7 @@ const Contact = () => {
   const fadeVariants = {
     initial: { opacity: 0, y: 10 },
     animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -10 }
+    exit: { opacity: 0, y: -10 },
   };
 
   const handleInputChange = (e) => {
@@ -53,36 +53,34 @@ const Contact = () => {
 
   const handleSubmit = async () => {
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          access_key: '079d0be6-c0b0-4d88-bb65-94dd22d1e7a0', // Replace with your Web3Forms access key
+          access_key: "079d0be6-c0b0-4d88-bb65-94dd22d1e7a0", // Replace with your Web3Forms access key
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          subject: 'New Contact Form Submission',
+          subject: "New Contact Form Submission",
         }),
       });
 
       const data = await response.json();
 
       if (data.success) {
-        alert('Thank you for your message. I will get back to you soon!');
+        alert("Thank you for your message. I will get back to you soon!");
         setFormData({ name: "", email: "", message: "" });
         setCurrentStep(1);
       } else {
-        alert('Something went wrong. Please try again.');
+        alert("Something went wrong. Please try again.");
       }
     } catch (error) {
-      console.error('Error:', error);
-      alert('Something went wrong. Please try again.');
+      console.error("Error:", error);
+      alert("Something went wrong. Please try again.");
     }
   };
-
-  
 
   return (
     <div id="contact" className="bg-black text-white py-10">
@@ -114,9 +112,9 @@ const Contact = () => {
               threshold={0.1}
             >
               <div>
-                <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#4079ff] bg-clip-text text-transparent">
-                  Get in Touch
-                </h2>
+                <p className="text-3xl sm:text-6xl lg:text-6xl font-bold bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#40ffaa] bg-clip-text text-transparent animate-gradient py-2">
+                  Get In Touch
+                </p>
                 <p className="text-gray-300 mb-8 text-lg">
                   I'm available for freelance projects and full-time positions.
                   Feel free to reach out through any of these channels:
@@ -184,101 +182,101 @@ const Contact = () => {
               threshold={0.1}
             >
               <div>
-                <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#4079ff] bg-clip-text text-transparent">
+                <p className="text-3xl sm:text-6xl lg:text-6xl font-bold bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#40ffaa] bg-clip-text text-transparent animate-gradient py-2">
                   Let's Talk
-                </h2>
+                </p>
                 <p className="text-gray-300 mb-8 text-lg">
                   Have a project in mind? Send me a message and let's create
                   something amazing together!
                 </p>
                 <div className="bg-gray-900 p-8 rounded-lg">
-  <AnimatePresence mode="wait">
-    {currentStep === 1 && (
-      <motion.div
-        key="step1"
-        variants={fadeVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition={{ duration: 0.3 }}
-        className="space-y-4"
-      >
-        <h3 className="text-2xl font-bold text-cyan-300 mb-4">
-          Your Info
-        </h3>
-                      <input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        placeholder="Your Name"
-                        className="w-full bg-gray-800 text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-300"
-                      />
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        placeholder="Your Email"
-                        className="w-full bg-gray-800 text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-300"
-                      />
-                    </motion.div>
-    )}
-
-{currentStep === 2 && (
-      <motion.div
-        key="step2"
-        variants={fadeVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition={{ duration: 0.3 }}
-      >
-        <h3 className="text-2xl font-bold text-cyan-300 mb-4">
-          Message
-        </h3>
-                      <textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        placeholder="Your Message"
-                        rows={6}
-                        className="w-full bg-gray-800 text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-300"
-                      />
-                   </motion.div>
-    )}
-
-{currentStep === 3 && (
-      <motion.div
-        key="step3"
-        variants={fadeVariants}
-        initial="initial"
-        animate="animate"
-        exit="exit"
-        transition={{ duration: 0.3 }}
-      >
-        <h3 className="text-2xl font-bold text-cyan-300 mb-4">
-          Preview
-        </h3>
-                      <div className="space-y-2 text-gray-300">
-                        <p>
-                          <span className="font-semibold">Name:</span>{" "}
-                          {formData.name}
-                        </p>
-                        <p>
-                          <span className="font-semibold">Email:</span>{" "}
-                          {formData.email}
-                        </p>
-                        <p>
-                          <span className="font-semibold">Message:</span>
-                        </p>
-                        <p className="whitespace-pre-wrap">
-                          {formData.message}
-                        </p>
-                      </div>
+                  <AnimatePresence mode="wait">
+                    {currentStep === 1 && (
+                      <motion.div
+                        key="step1"
+                        variants={fadeVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                        transition={{ duration: 0.3 }}
+                        className="space-y-4"
+                      >
+                        <h3 className="text-2xl font-bold text-cyan-300 mb-4">
+                          Your Info
+                        </h3>
+                        <input
+                          type="text"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleInputChange}
+                          placeholder="Your Name"
+                          className="w-full bg-gray-800 text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-300"
+                        />
+                        <input
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleInputChange}
+                          placeholder="Your Email"
+                          className="w-full bg-gray-800 text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-300"
+                        />
                       </motion.div>
-    )}
-  </AnimatePresence>
+                    )}
+
+                    {currentStep === 2 && (
+                      <motion.div
+                        key="step2"
+                        variants={fadeVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                        transition={{ duration: 0.3 }}
+                      >
+                        <h3 className="text-2xl font-bold text-cyan-300 mb-4">
+                          Message
+                        </h3>
+                        <textarea
+                          name="message"
+                          value={formData.message}
+                          onChange={handleInputChange}
+                          placeholder="Your Message"
+                          rows={6}
+                          className="w-full bg-gray-800 text-gray-100 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-300"
+                        />
+                      </motion.div>
+                    )}
+
+                    {currentStep === 3 && (
+                      <motion.div
+                        key="step3"
+                        variants={fadeVariants}
+                        initial="initial"
+                        animate="animate"
+                        exit="exit"
+                        transition={{ duration: 0.3 }}
+                      >
+                        <h3 className="text-2xl font-bold text-cyan-300 mb-4">
+                          Preview
+                        </h3>
+                        <div className="space-y-2 text-gray-300">
+                          <p>
+                            <span className="font-semibold">Name:</span>{" "}
+                            {formData.name}
+                          </p>
+                          <p>
+                            <span className="font-semibold">Email:</span>{" "}
+                            {formData.email}
+                          </p>
+                          <p>
+                            <span className="font-semibold">Message:</span>
+                          </p>
+                          <p className="whitespace-pre-wrap">
+                            {formData.message}
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
 
                   <div className="flex justify-between mt-6">
                     <button

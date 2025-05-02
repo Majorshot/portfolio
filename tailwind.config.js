@@ -34,15 +34,20 @@ export default {
           "100%": { "clip-path": "inset(30% 0 40% 0)" }
         },
         gradient: {
-          '0%': { backgroundPosition: '0% 50%' },
-          '50%': { backgroundPosition: '100% 50%' },
-          '100%': { backgroundPosition: '0% 50%' },
+          '0%, 100%': {
+            'background-size': '200% 200%',
+            'background-position': 'left center'
+          },
+          '50%': {
+            'background-size': '200% 200%',
+            'background-position': 'right center'
+          },
         },
       },
       animation: {
         "glitch-after": "glitch var(--after-duration) infinite linear alternate-reverse",
         "glitch-before": "glitch var(--before-duration) infinite linear alternate-reverse",
-        gradient: 'gradient 8s linear infinite',
+        gradient: 'gradient 3s linear infinite',
       }
     }
   },

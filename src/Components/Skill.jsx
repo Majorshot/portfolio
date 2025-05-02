@@ -9,7 +9,6 @@ const Skill = () => {
     { name: "Photography", percentage: 75 },
     { name: "Video Editing", percentage: 60 },
     { name: "Software knowledge", percentage: 73 },
-    
   ];
 
   return (
