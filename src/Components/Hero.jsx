@@ -72,7 +72,7 @@ const Hero = () => {
         </div>
 
         {/* Flex spacer to push content to bottom on mobile */}
-        <div className="flex-grow sm:hidden"></div>
+        <div className="flex mt-96 sm:hidden"></div>
 
         {/* Desktop positioning - only visible on sm and above */}
         <div className="hidden sm:block sm:mt-6">
