@@ -197,7 +197,7 @@ const Hero = () => {
               <AnimatedContent
                 distance={100}
                 direction="vertical"
-                reverse={false}
+                reverse={true}
                 config={{ tension: 50, friction: 25 }}
                 initialOpacity={0.2}
                 animateOpacity
