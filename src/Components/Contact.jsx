@@ -133,8 +133,6 @@ const Contact = () => {
                       @perilla_paiyen
                     </a>
                   </div>
-
-                  
                 </div>
               </div>
             </AnimatedContent>
