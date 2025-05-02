@@ -4,7 +4,7 @@ import { useTransition, a } from '@react-spring/web';
 function Masonry({ data }) {
   const [columns, setColumns] = useState(2);
   const [isExpanded, setIsExpanded] = useState(false);
-  const [displayedItems, setDisplayedItems] = useState(data.slice(0, 2));
+  const [displayedItems, setDisplayedItems] = useState(data.slice(0, 3));
 
   useEffect(() => {
     const updateColumns = () => {
@@ -19,7 +19,7 @@ function Masonry({ data }) {
         setDisplayedItems(data);
       } else {
         setColumns(1); // Mobile devices
-        setDisplayedItems(isExpanded ? data : data.slice(0, 2));
+        setDisplayedItems(isExpanded ? data : data.slice(0, 3));
       }
     };
 
@@ -43,7 +43,8 @@ function Masonry({ data }) {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const aspectRatio = 1;
+  // Changed aspect ratio to 16:9
+  const aspectRatio = 9/16;
   const itemWidth = width / columns;
   const itemHeight = itemWidth * aspectRatio;
 
@@ -83,14 +84,27 @@ function Masonry({ data }) {
             className="absolute p-4 will-change-transform"
           >
             <div
-              className="relative w-full h-full overflow-hidden rounded-md shadow-lg transition duration-300 ease-in-out hover:scale-105"
+              className="relative overflow-hidden rounded-md shadow-lg transition duration-300 ease-in-out hover:scale-105"
               style={{
                 backgroundColor: '#ffffff',
-                backgroundImage: `url(${item.image})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                width: '100%',
+                paddingBottom: '56.25%', // 16:9 aspect ratio
+                position: 'relative',
               }}
-            />
+            >
+              <div
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  bottom: 0,
+                  backgroundImage: `url(${item.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                }}
+              />
+            </div>
           </a.div>
         ))}
       </div>

@@ -1,24 +1,37 @@
 import React from 'react'
 import RotatingText from './Animations/RotatingText'
-import code from "../assets/code.jpg"
-import graphic from "../assets/graphic.jpg"
 import SpotlightCard from "./Animations/SpotlightCard";
 import CircularGallery from './Animations/CircularGallery'
 import Masonry from './Animations/Masonry'
+import AnimatedContent from "./Animations/AnimatedContent";
+import prescipto from "../assets/prescipto.png"
+import pizza from "../assets/pizza.png"
+import todo from "../assets/todo.png"
+import ladoo from "../assets/ladoo.jpg"
+import chicken from "../assets/chicken.jpg"
+import choco from "../assets/choco.jpg"
+import club from "../assets/club.jpg"
+import puff from "../assets/puff.jpg"
+import spanish from "../assets/spanish.jpg"
+import sand from "../assets/sand.jpg"
+import veg from "../assets/veg.jpg"
+import fruit from "../assets/fruit.jpg"
+import zatar from "../assets/zatar.jpg"
+
 
 const MyWork = () => {
 
   const data = [
-    { id: 1, image: 'https://picsum.photos/id/10/200/300', height: 400 },
-    { id: 2, image: 'https://picsum.photos/id/14/200/300', height: 300 },
-    { id: 3, image: 'https://picsum.photos/id/15/200/300', height: 300 },
-    { id: 4, image: 'https://picsum.photos/id/16/200/300', height: 300 },
-    { id: 5, image: 'https://picsum.photos/id/17/200/300', height: 300 },
-    { id: 6, image: 'https://picsum.photos/id/19/200/300', height: 300 },
-    { id: 7, image: 'https://picsum.photos/id/37/200/300', height: 200 },
-    { id: 8, image: 'https://picsum.photos/id/39/200/300', height: 300 },
-    { id: 9, image: 'https://picsum.photos/id/85/200/300', height: 200 },
-    { id: 10, image: 'https://picsum.photos/id/103/200/300', height: 400 }
+    { id: 1, image: ladoo , height: 400 },
+    { id: 2, image: chicken, height: 300 },
+    { id: 3, image: choco , height: 300 },
+    { id: 4, image: club , height: 300 },
+    { id: 5, image: puff , height: 300 },
+    { id: 6, image: spanish , height: 300 },
+    { id: 7, image: sand , height: 200 },
+    { id: 8, image: veg , height: 300 },
+    { id: 9, image: fruit , height: 200 },
+    { id: 10, image: zatar , height: 400 }
   ];
 
   const projects = [
@@ -33,7 +46,7 @@ const MyWork = () => {
       ],
       demoLink: "https://prescipto-qbg7.onrender.com/",
       sourceLink: "#",
-      image: code
+      image: prescipto
     },
     {
       title: "Pappas Pizza",
@@ -47,7 +60,7 @@ const MyWork = () => {
     ],
     demoLink: "https://pappaspizza.netlify.app/",
     sourceLink: "#",
-    image: graphic // Assuming you have a pizza-related image
+    image: pizza
   },
   {
     title: "ToDoApp",
@@ -61,7 +74,7 @@ const MyWork = () => {
     ],
     demoLink: "https://todoappsted.netlify.app/",
     sourceLink: "#",
-    image: code // Replace with appropriate todo app image
+    image: todo
   },
     // Add more projects here with the same structure
   ];
@@ -85,14 +98,56 @@ const MyWork = () => {
       </div>
 
       <div className='px-4 sm:px-8 lg:px-20 text-left'>
-        <p className="text-3xl sm:text-6xl lg:text-5xl font-bold bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#4079ff] bg-clip-text text-transparent leading-normal py-2">
+      <AnimatedContent
+            distance={150}
+            direction="horizontal"
+            reverse={true}
+            config={{ tension: 70, friction: 50 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1.1}
+            threshold={0.2}
+          >
+            <div>
+              <p className="text-3xl sm:text-6xl lg:text-5xl font-bold bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#4079ff] bg-clip-text text-transparent leading-normal py-2">
           Projects
         </p>
-        <p className="text-gray-300 text-lg sm:text-xl mt-4">
+            </div>
+          </AnimatedContent>
+
+          <AnimatedContent
+            distance={150}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 70, friction: 50 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1}
+            threshold={0.1}
+          >
+            <div>
+              <p className="text-gray-300 text-lg sm:text-xl mt-4">
     Showcasing my expertise in full-stack development using the MERN stack (MongoDB, Express.js, React.js, Node.js). Each project demonstrates my ability to create robust, scalable, and user-friendly web applications.
-  </p>      </div>
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mx-0 px-4 mt-8 justify-items-start'>
+  </p>
+            </div>
+          </AnimatedContent>
+        
+              </div>
+              
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-8 mx-0 px-4 mt-8 justify-items-start'>
+        
   {projects.map((project, index) => (
+    <AnimatedContent
+    distance={150}
+    direction="horizontal"
+    reverse={true}
+    config={{ tension: 70, friction: 50 }}
+    initialOpacity={0.2}
+    animateOpacity
+    scale={1}
+    threshold={0.1}
+  >
+    <div>
     <SpotlightCard 
       key={index}
       className="w-full p-6" 
@@ -126,22 +181,54 @@ const MyWork = () => {
       View Demo
     </button>
   </a>
-                  <button className="border border-cyan-300 text-cyan-300 px-4 py-2 rounded-lg hover:bg-cyan-300/10 transition-colors">
-                    Source Code
-                  </button>
+                  
                 </div>
               </div>
             </div>
           </SpotlightCard>
+          </div>
+            </AnimatedContent>
         ))}
       </div>
+            
+      
       <div className='px-4 sm:px-8 lg:px-20 text-left mt-10'>
-      <p className="text-3xl sm:text-6xl lg:text-5xl font-bold bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#4079ff] bg-clip-text text-transparent leading-normal py-2">
+
+      <AnimatedContent
+            distance={150}
+            direction="horizontal"
+            reverse={true}
+            config={{ tension: 70, friction: 50 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1}
+            threshold={0.1}
+          >
+            <div>
+              <p className="text-3xl sm:text-6xl lg:text-5xl font-bold bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#4079ff] bg-clip-text text-transparent leading-normal py-2">
           Designs
         </p>
-        <p className="text-gray-300 text-lg sm:text-xl mt-4">
+            </div>
+          </AnimatedContent>
+
+          <AnimatedContent
+            distance={150}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 70, friction: 50 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1}
+            threshold={0.1}
+          >
+            <div>
+              <p className="text-gray-300 text-lg sm:text-xl mt-4">
     Crafting eye-catching posters and visual designs that capture attention and convey messages effectively. Each design is created with a perfect blend of creativity and purpose.
-  </p> 
+  </p>
+            </div>
+          </AnimatedContent>
+      
+         
        </div>
       <div>
       <div style={{ height: '600px', position: 'relative' }}>
@@ -150,17 +237,61 @@ const MyWork = () => {
       </div>
 
       <div className='px-4 sm:px-8 lg:px-20 text-left mt-10'>
-      <p className="text-3xl sm:text-6xl lg:text-5xl font-bold bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#4079ff] bg-clip-text text-transparent leading-normal py-2">
+      <AnimatedContent
+            distance={150}
+            direction="horizontal"
+            reverse={true}
+            config={{ tension: 70, friction: 50 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1}
+            threshold={0.1}
+          >
+            <div>
+              <p className="text-3xl sm:text-6xl lg:text-5xl font-bold bg-gradient-to-r from-[#40ffaa] via-[#4079ff] to-[#4079ff] bg-clip-text text-transparent leading-normal py-2">
           Photography
         </p>
-        <p className="text-gray-300 text-lg sm:text-xl mt-4">
+            </div>
+          </AnimatedContent>
+
+          <AnimatedContent
+            distance={150}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 70, friction: 50 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1}
+            threshold={0.1}
+          >
+            <div>
+              <p className="text-gray-300 text-lg sm:text-xl mt-4">
     Capturing moments through my lens with a focus on portrait and landscape photography. Each shot is carefully composed to tell a unique story and evoke emotion through creative angles and natural lighting.
-  </p>   
+  </p>
+            </div>
+          </AnimatedContent>
+      
+           
      </div>
 
-     <div>
+     <AnimatedContent
+            distance={150}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 70, friction: 50 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1}
+            threshold={0.1}
+          >
+            <div>
+              <div>
      <Masonry data={data} />
      </div>
+            </div>
+          </AnimatedContent>
+
+     
     </div>
   )
 }

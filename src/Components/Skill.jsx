@@ -27,12 +27,26 @@ const Skill = () => {
 
       <div className="flex flex-col items-center gap-8 sm:gap-12 lg:gap-16">
         {/* Description */}
-        <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl text-center leading-relaxed">
+        <AnimatedContent
+            distance={150}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 70, friction: 50 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1.1}
+            threshold={0.2}
+          >
+            <div>
+              <p className="text-base sm:text-lg lg:text-xl text-gray-300 max-w-2xl text-center leading-relaxed">
           Passionate about creating seamless web experiences with MERN stack,
           capturing life's moments through photography, and staying ahead with
           the latest tech trends. Here's a glimpse of my expertise across
           different domains.
         </p>
+            </div>
+          </AnimatedContent>
+        
 
         {/* Skills and Stats Container */}
         <div className="w-full max-w-3xl space-y-8 sm:space-y-12 lg:space-y-16">
@@ -68,7 +82,18 @@ const Skill = () => {
 
           {/* Stats Section */}
 <div className="w-full border-t border-gray-700 pt-8 sm:pt-12 lg:pt-16">
-  <div className="flex flex-row items-center justify-between px-4">
+<AnimatedContent
+            distance={150}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 70, friction: 50 }}
+            initialOpacity={0.2}
+            animateOpacity
+            scale={1}
+            threshold={0.1}
+          >
+            <div>
+              <div className="flex flex-row items-center justify-between px-4">
     {/* Clients */}
     <div className="flex flex-col items-center">
       <CountUp
@@ -114,6 +139,9 @@ const Skill = () => {
       <p className="text-xs sm:text-base lg:text-lg text-gray-300 mt-2">Hour Support</p>
     </div>
   </div>
+            </div>
+          </AnimatedContent>
+  
 </div>
         </div>
       </div>

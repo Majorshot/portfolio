@@ -8,30 +8,33 @@ import edit from "../assets/editing.jpg";
 import AnimatedContent from "./Animations/AnimatedContent";
 
 const Services = () => {
-
   // Services data array for cleaner rendering
-const services = [
-  {
-    title: "Web Development",
-    description: "Creating responsive and modern websites using the latest technologies and best practices for optimal user experience.",
-    image: code
-  },
-  {
-    title: "Graphics Design",
-    description: "Crafting stunning visuals, logos, and brand identities that capture your unique vision and message.",
-    image: graphic
-  },
-  {
-    title: "Social Media",
-    description: "Strategic social media management and content creation to boost your online presence and engagement.",
-    image: social
-  },
-  {
-    title: "Video Editing & Photography",
-    description: "Professional video editing and photography services to tell your story through compelling visual content.",
-    image: edit
-  },
-];
+  const services = [
+    {
+      title: "Web Development",
+      description:
+        "Creating responsive and modern websites using the latest technologies and best practices for optimal user experience.",
+      image: code,
+    },
+    {
+      title: "Graphics Design",
+      description:
+        "Crafting stunning visuals, logos, and brand identities that capture your unique vision and message.",
+      image: graphic,
+    },
+    {
+      title: "Social Media",
+      description:
+        "Strategic social media management and content creation to boost your online presence and engagement.",
+      image: social,
+    },
+    {
+      title: "Video Editing & Photography",
+      description:
+        "Professional video editing and photography services to tell your story through compelling visual content.",
+      image: edit,
+    },
+  ];
 
   return (
     <div id="services" className="bg-black text-white py-16">
@@ -83,7 +86,5 @@ const services = [
     </div>
   );
 };
-
-
 
 export default Services;
