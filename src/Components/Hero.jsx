@@ -130,7 +130,7 @@ const Hero = () => {
 
                   {/* Resume Button with right arrow icon */}
                   <a
-                    href="https://drive.google.com/file/d/1MzrQEyglHWvNpl-qzCcBk9iKuJqFFOWm/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1i5xAfm0aTy4FW8DJKeiDkxpYQmz3Gem_/view?usp=sharing"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
