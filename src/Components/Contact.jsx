@@ -152,6 +152,17 @@ const Contact = () => {
                       Majorshot
                     </a>
                   </div>
+                  <div className="flex items-center gap-3 group">
+                    <FaLinkedin className="text-cyan-300 text-2xl group-hover:text-cyan-400" />
+                    <a
+                      href="https://www.linkedin.com/in/midhunmohan-dev/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 hover:text-cyan-300 transition-colors"
+                    >
+                      Midhun Mohan
+                    </a>
+                  </div>
 
                   <div className="flex items-center gap-3 group">
                     <FaInstagram className="text-cyan-300 text-2xl group-hover:text-cyan-400" />
