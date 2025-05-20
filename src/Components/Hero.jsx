@@ -135,7 +135,7 @@ const Hero = () => {
                     rel="noopener noreferrer"
                   >
                     <button className="bg-white text-black py-3 px-5 rounded flex items-center space-x-4 hover:bg-gray-100 transition-all duration-300 hover:scale-105 justify-center transform">
-                      <span className="font-medium"> My Resume</span>
+                      <span className="font-medium">My Resume</span>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-5 w-5"
