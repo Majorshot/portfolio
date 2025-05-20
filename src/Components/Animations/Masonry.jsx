@@ -1,5 +1,7 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { useTransition, a } from '@react-spring/web';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 function Masonry({ data }) {
   const [columns, setColumns] = useState(2);
@@ -71,24 +73,25 @@ function Masonry({ data }) {
   });
 
   return (
-    <div className="relative w-full">
-      <div
-        ref={ref}
-        className="relative w-full"
-        style={{ height: totalHeight }}
-      >
-        {transitions((style, item) => (
-          <a.div
-            key={item.id}
-            style={style}
-            className="absolute p-4 will-change-transform"
-          >
+  <div className="relative w-full">
+    <div
+      ref={ref}
+      className="relative w-full"
+      style={{ height: totalHeight }}
+    >
+      {transitions((style, item) => (
+        <a.div
+          key={item.id}
+          style={style}
+          className="absolute p-4 will-change-transform"
+        >
+          <Zoom>
             <div
-              className="relative overflow-hidden rounded-md shadow-lg transition duration-300 ease-in-out hover:scale-105"
+              className="relative overflow-hidden rounded-md shadow-lg transition duration-300 ease-in-out hover:scale-105 cursor-zoom-in"
               style={{
                 backgroundColor: '#ffffff',
                 width: '100%',
-                paddingBottom: '56.25%', // 16:9 aspect ratio
+                paddingBottom: '56.25%',
                 position: 'relative',
               }}
             >
@@ -105,9 +108,10 @@ function Masonry({ data }) {
                 }}
               />
             </div>
-          </a.div>
-        ))}
-      </div>
+          </Zoom>
+        </a.div>
+      ))}
+    </div>
       
       <div className="md:hidden w-full flex justify-center mt-4">
         <button
