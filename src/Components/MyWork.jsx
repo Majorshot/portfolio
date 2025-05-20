@@ -139,11 +139,12 @@ const MyWork = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mx-0 px-4 mt-8 justify-items-start">
         {projects.map((project, index) => (
           <AnimatedContent
-            distance={150}
-            direction="horizontal"
-            reverse={true}
-            config={{ tension: 70, friction: 50 }}
-            initialOpacity={0.2}
+            key={index}
+            distance={100}
+            direction="vertical"
+            reverse={false}
+            config={{ tension: 50, friction: 25 }}
+            initialOpacity={0.0}
             animateOpacity
             scale={1}
             threshold={0.1}
